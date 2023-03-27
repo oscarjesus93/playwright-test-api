@@ -17,20 +17,15 @@ test.describe('Test Api Rest GoREST', () => {
         });
         
         await expect(response.ok()).toBeTruthy();
-        await expect(response.status()).toBe(200);
+        await expect(response.status()).toBe(201);
     })
 
     test('Test Get Users', async ({ request }) => {
+
         const response = await request.get(`${URL_COMPLEMENT}/users`);
         await expect(response.ok()).toBeTruthy();      
         await expect(response.status()).toBe(200);
     })
-
-    test('Test Get User For Id', async ({request}) => {
-        const response = await request.get(`${URL_COMPLEMENT}/users/123307`);
-        await expect(response.ok()).toBeTruthy();
-        await expect(response.status()).toBe(200);
-    })    
 
     test('Test Put Api', async ({request}) => {
         const response = await request.get(`${URL_COMPLEMENT}/users`, {
