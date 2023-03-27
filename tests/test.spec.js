@@ -21,6 +21,7 @@ test.describe('Test Api Rest GoREST', () => {
     })
 
     test('Test Get Users', async ({ request }) => {
+        
         const response = await request.get(`${URL_COMPLEMENT}/users`);
         await expect(response.ok()).toBeTruthy();      
         await expect(response.status()).toBe(200);
